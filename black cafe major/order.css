@@ -1,0 +1,263 @@
+* {backdrop-filter: blur(7px);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;   
+}
+body {
+
+background-image: url(backgr.avif);
+width: 100%;
+height: 320vh;
+
+position: relative;
+}
+.body::before{
+    content: "";
+    position: absolute;
+    top:0 ;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.header {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+padding: 20px 10%;
+background-color: orange;
+display: flex;
+justify-content: space-between;
+align-items: center;
+z-index: 100;
+
+}
+.logo {
+    font-size: 25px;
+    color:#081b29;
+    text-decoration: none;
+    font-weight: 600;
+}
+.logo:hover {
+    font-size: 30px;
+    color:#081b29;
+    text-decoration: none;
+    font-weight: 600;
+    zoom: 2px;
+    transition: 0.7s;
+    opacity: 0;
+    display: inline-block;
+    animation: anime 1s linear forwards;
+}
+@keyframes anime {
+    0%{
+        opacity: 0;
+        filter: blur(10px) ;
+    }
+    100%{
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+.navbar a {
+    font-size: 18px;
+    color: rgb(237, 240, 240);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+transition: 3s;
+
+}
+
+.navbar a.active{
+    color: black;
+}
+.navbar a.active:hover{
+    color: #e1ebf0;
+    transition: 1s;
+    font-size: 22px;
+
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+  }
+h1 {
+    text-align: center;
+    color: darkorange;
+    padding-top: 130px;
+  }
+  h1:hover{
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  h2{
+    text-align: center;
+    color: darkorange;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  h2:hover{
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  h3{
+    padding-top: 20px;
+    padding-bottom: 20px;
+   
+  }
+  p{
+    padding-bottom: 20px;
+  }
+  
+  #menu {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    color:orange
+  }
+  
+  .item {
+    text-align: center;
+  }
+  
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  img:hover{
+    cursor: pointer;
+   width: 230px;
+   height: 230px;
+    transition: 0.5s;
+  }
+  
+  button {
+    background-color: #000000ae;
+    color: orange;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 15px;
+    
+  }
+  
+  button:hover {
+    background-color: darkorange;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+  /* Style the container element */
+.container {
+    width: 500px; /* Adjust width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    border: 1px solid orange; /* Add a thin border */
+    padding: 20px; /* Add some padding inside the container */
+    background-color: black;
+    color: white;
+  }
+  
+  /* Style the heading (h2) */
+  h2 {
+    text-align: center; /* Center the heading text */
+    margin-bottom: 10px; /* Add some space below the heading */
+  }
+  
+  /* Style the horizontal lines (hr) */
+  hr {
+    border: 0; /* Remove the default border */
+    height: 2px; /* Set the height of the line */
+    background-color: orange; /* Set the color of the line */
+    margin: 0; /* Remove default margins from the line */
+  }
+  
+  /* Style the order list (ul) */
+  #orderList {
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margins */
+  }
+  
+  /* Style the list items (li) inside the order list */
+  #orderList li {
+    margin-bottom: 10px; /* Add space between list items */
+  }
+  
+  /* Style the total price span */
+  #total {
+    font-weight: bold; /* Make the total price bold */
+    float: right; /* Align the total price to the right */
+  }
+
+  /*order confirm buttton*/
+.popup .overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 50vh;
+    height: 30vh;
+   /*background:rgba(0, 0, 0, 0.7) ;*/
+   background-color:black;
+    z-index: 1;
+   display: none;
+   border: solid darkorange;
+   border-radius: 20px;
+}
+.popup .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    width: 450px;
+    height: 120px;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+/*.popup .close-btn{
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background:#222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}*/
+.popup.active .overlay{
+
+    display: block;
+}
+.popup.active .content{
+    transition:all 300ms ease-in-out ;
+    transform: translate(-50%,-50%) scale(1);
+}
+.container button{
+    background-color: darkorange;
+    color: black;
+}
+.container button:hover{
+    background-color: black;
+    color: darkorange;
+    transition: 0.5s;
+    border: solid orange;
+
+}
